@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muskan Yadav — Portfolio</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-content">
-        <!-- <h1 class="site-brand">Muskan Yadav</h1> -->
+        <h1 class="site-brand">Muskan Yadav</h1>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -28,21 +29,37 @@
   <main>
     <section id="home" class="hero">
       <div class="container">
-        <div class="hero-content">
-          <img src="images/muskann.jpg" alt="Profile picture" class="hero-image">
-          <div class="hero-text">
-            <h1>Muskan Yadav</h1>
-            <p class="role">Web Developer & Designer</p>
-            <p class="intro">I create clean, accessible websites with a focus on user experience and modern design principles.</p>
+        <div class="top-section">
+          <div class="about-section">
+            <h2 class="about-heading">About me</h2>
+            <div class="about-content">
+              <div class="about-text">
+                <p>Hi! My name is Muskan Yadav. I am a Web Developer & Designer based in Nepal, Biratnagar with experience through projects and subjects in university. My objective: Challenge myself in a new environment to learn, develop, improve my skills through different projects and contribute more to the company with my abilities.</p>
+              </div>
+              <div class="about-image-wrapper">
+                <img src="images/muskann.jpg" alt="Profile picture" class="about-image">
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-section">
+            <h2 class="contact-heading">Contact</h2>
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <span>officialmuskan176@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📱</span>
+                <span>9706295135</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">💼</span>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">linkedin.com/feed</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>I'm Muskan — a creative coder and storyteller who blends poetry with design. I love turning ideas into clean, minimalist web projects, where every detail matters. My portfolio is a space where imagination meets precision.</p>
       </div>
     </section>
 
@@ -51,7 +68,7 @@
         <h2>Projects</h2>
         <div class="projects-grid">
           <article class="project-card">
-            <img src="images/project.png" alt="Screenshot of Project One">
+            <img src="images/image.png" alt="Movie Search Application - Breaking Bad search results">
             <div class="project-body">
               <p>My movie app is a simple platform to discover films—users can search, filter, and view details like ratings, cast, and trailers, all in a clean and easy interface.</p>
             </div>
@@ -60,41 +77,66 @@
       </div>
     </section>
 
-    <section id="skills" class="skills">
+    <section id="skills" class="skills-section">
       <div class="container">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Responsive Design</li>
-          <li>Accessibility</li>
-          <li>Typography</li>
-          <li>Version Control</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <form action="#" method="post" class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+        <div class="skills-card">
+          <div class="skill-group">
+            <h3>Education</h3>
+            <div class="education-item">
+              <span class="timeline">2025 - Now</span>
+              <span class="education-detail">University Of Wolverhampton- Computer Science</span>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+          <div class="skill-group">
+            <h3>Soft skill</h3>
+            <ul class="skill-list">
+              <li>Teamwork</li>
+              <li>Communication</li>
+              <li>Critical Thinking</li>
+              <li>Time Management</li>
+            </ul>
           </div>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+          <div class="skill-group">
+            <h3>Technical skill</h3>
+            <div class="tech-icons">
+              <div class="tech-icon">HTML</div>
+              <div class="tech-icon">CSS</div>
+              <div class="tech-icon">JS</div>
+              <div class="tech-icon">React</div>
+              <div class="tech-icon">Node</div>
+              <div class="tech-icon">Git</div>
+            </div>
           </div>
 
-          <button type="submit" class="btn-submit">Send Message</button>
-        </form>
+          <div class="skill-group">
+            <h3>Skill set</h3>
+            <ul class="skill-list">
+              <li>User research</li>
+              <li>Wireframing</li>
+              <li>Brainstorming</li>
+              <li>Web Design</li>
+              <li>App Design</li>
+              <li>Prototyping</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Interest</h3>
+            <ul class="skill-list">
+              <li>Design Trends</li>
+              <li>Technology</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3>Language</h3>
+            <ul class="skill-list">
+              <li>Hindi | English (Intermediate)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>

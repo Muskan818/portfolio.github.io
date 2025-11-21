@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Details — Muskan Yadav Portfolio</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-details-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .form-details-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+    .form-details-card h1 {
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .detail-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: rgba(99, 102, 241, 0.1);
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+    }
+    .detail-label {
+      font-weight: 600;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .detail-value {
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    .success-message {
+      background-color: #10b981;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .error-message {
+      background-color: #ef4444;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+    .back-button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-details-container">
+    <div class="form-details-card">
+      <h1>Form Submission Details</h1>
+      <div id="messageContainer"></div>
+      <div id="detailsContainer"></div>
+      <a href="index.html" class="back-button">Back to Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+    // Read data from localStorage
+    const formData = JSON.parse(localStorage.getItem('contactFormData'));
+    const messageContainer = document.getElementById('messageContainer');
+    const detailsContainer = document.getElementById('detailsContainer');
+
+    if (formData) {
+      // Show success message
+      messageContainer.innerHTML = '<div class="success-message">✓ Form submitted successfully!</div>';
+
+      // Display form data
+      detailsContainer.innerHTML = `
+        <div class="detail-item">
+          <span class="detail-label">Name:</span>
+          <span class="detail-value">${escapeHtml(formData.name)}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Email:</span>
+          <span class="detail-value">${escapeHtml(formData.email)}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Message:</span>
+          <span class="detail-value">${escapeHtml(formData.message)}</span>
+        </div>
+        ${formData.timestamp ? `
+        <div class="detail-item">
+          <span class="detail-label">Submitted:</span>
+          <span class="detail-value">${new Date(formData.timestamp).toLocaleString()}</span>
+        </div>
+        ` : ''}
+      `;
+
+      // Clear localStorage after displaying
+      // localStorage.removeItem('contactFormData');
+    } else {
+      // Show error message
+      messageContainer.innerHTML = '<div class="error-message">✗ No form data found. Please submit the form first.</div>';
+      detailsContainer.innerHTML = '<p style="text-align: center; color: var(--color-text-muted);">Please go back and fill out the contact form.</p>';
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
+
